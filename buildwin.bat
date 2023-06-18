@@ -34,4 +34,9 @@ copy programs\*.pcx b:\
 echo Dismounting disk image...
 imdisk -D -m B:
 
+echo Clearing build leftovers...
+cd programs
+ for %%i in (*.bin) do del %%i
+cd ..
+
 echo Done!
