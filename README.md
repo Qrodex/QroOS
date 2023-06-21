@@ -1,5 +1,5 @@
 
-# QroOS - The Best Operating System
+# **QroOS - The Best Operating System**
 QroOS is a new operating system made by Qrodex Innovations. But why QroOS? Well...
 
 - **No Multitasking**
