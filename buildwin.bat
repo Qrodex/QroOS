@@ -29,7 +29,6 @@ echo Copying kernel and applications to disk image...
 copy source\kernel.bin b:\
 copy programs\*.bin b:\
 copy programs\*.bas b:\
-copy programs\*.pcx b:\
 
 echo Dismounting disk image...
 imdisk -D -m B:
