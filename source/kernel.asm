@@ -2,8 +2,8 @@
 	CPU 386				; pusha offsets depends on a 386 or better
 					; FS and GS require a 386 or better
 
-	%DEFINE MIKEOS_VER '5.0'	; OS version number
-	%DEFINE MIKEOS_API_VER 18	; API version for programs to check
+	%DEFINE QROOS_VER '5.0'	; OS version number
+	%DEFINE QROOS_API_VER 18	; API version for programs to check
 
 
 	; This is the location in RAM for kernel disk operations, 24K
@@ -172,7 +172,7 @@ option_screen:
 
 	; Data for the above code...
 
-	os_init_msg		db 'QroOS Version ', MIKEOS_VER, 0
+	os_init_msg		db 'QroOS Version ', QROOS_VER, 0
 	os_version_msg db '[Menu] ', 0 ; allocate space for the time string
 
 
