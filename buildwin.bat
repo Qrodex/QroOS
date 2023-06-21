@@ -19,7 +19,7 @@ cd ..
 
 echo Adding bootsector to disk image...
 cd disk_images
-dd count=2 seek=0 bs=512 if=..\source\bootload\bootload.bin of=.\QroOS.flp
+..\btools\dd.exe count=2 seek=0 bs=512 if=..\source\bootload\bootload.bin of=.\QroOS.flp
 cd ..
 
 echo Mounting disk image...
