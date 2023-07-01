@@ -65,4 +65,7 @@ echo ">>> Creating CD-ROM ISO image..."
 rm -f disk_images/QroOS.iso
 mkisofs -quiet -V 'QROOS' -input-charset iso8859-1 -o disk_images/QroOS.iso -b QroOS.flp disk_images/ || exit
 
+echo ">>> Finishing..."
+rm -rf programs/*.bin
+
 echo '>>> Done!'
