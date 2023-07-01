@@ -49,7 +49,7 @@ rm -rf tmp-loop
 
 mkdir tmp-loop && mount -o loop -t vfat disk_images/QroOS.flp tmp-loop && cp source/kernel.bin tmp-loop/
 
-cp programs/*.bin programs/*.bas programs/sample.pcx tmp-loop
+cp programs/*.bin precompiled/*.bin programs/*.bas programs/sample.pcx tmp-loop
 
 sleep 0.2
 
@@ -66,5 +66,3 @@ rm -f disk_images/QroOS.iso
 mkisofs -quiet -V 'QROOS' -input-charset iso8859-1 -o disk_images/QroOS.iso -b QroOS.flp disk_images/ || exit
 
 echo '>>> Done!'
-
-

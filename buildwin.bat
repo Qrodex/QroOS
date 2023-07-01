@@ -30,6 +30,9 @@ copy source\kernel.bin b:\
 copy programs\*.bin b:\
 copy programs\*.bas b:\
 
+echo Copying precompiled programs
+copy precompiled\*.bin b:\
+
 echo Dismounting disk image...
 imdisk -D -m B:
 
