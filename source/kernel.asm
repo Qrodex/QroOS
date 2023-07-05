@@ -3,7 +3,7 @@
 					; FS and GS require a 386 or better
 
 	%DEFINE QROOS_VER '5.2'	; OS version number
-	%DEFINE QROOS_CODENAME 'Halcyon'	; OS Codename
+	%DEFINE QROOS_CODENAME 'Halcyon'	; QroOS Codename
 	%DEFINE QROOS_API_VER 18	; API version for programs to check
 
 
