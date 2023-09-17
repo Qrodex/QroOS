@@ -255,7 +255,7 @@ start:
 .draw_background:
 	mov ax, .title_msg
 	mov bx, .footer_msg
-	mov cx, 00100000b
+	mov cx, 10100000b
 	call os_draw_background
 	ret
 

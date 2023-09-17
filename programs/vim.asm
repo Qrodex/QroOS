@@ -230,11 +230,6 @@ get_key:
     cmp al, 0x24    ; ^$=goto end of line
     je end_of_line
 
-    cmp ax, 0x3B00  ; F1 key help
-    jne .cmd_mode
-    call help
-    jmp near .clear_msg
-
 ;----Command Mode----;
 .cmd_mode:
     cmp ax, 0x273A  ; ^:=command mode
@@ -1326,13 +1321,6 @@ redraw_help:
     
     ;----start show help loop----;
     .show_help:
-        lodsb					; Get character from file data
-        cmp al, 10				; Go to start of line if it's a carriage return character
-        jne .not_newline
-
-        call os_get_cursor_pos  
-        mov dl, 0				; Set DL = 0 (column = 0) 
-        call os_move_cursor
 
     .not_newline:
         call os_get_cursor_pos	; Don't wrap lines on screen
@@ -1445,7 +1433,7 @@ temp_file           db 'TEMP.TXT',0
 new_file_msg        db ' Enter file name: ',0
 code_run_end        db 0x0d,0x0a,'>>>Basic Program End<<< Hit any key...',0
 
-f1_help_msg         db 'F1 = Help',0
+f1_help_msg         db '',0
 
 file_name           times  32 db 0
 

@@ -249,8 +249,6 @@ execute_bin_program:
 					; (program must end with 'ret')
 
 	mov si, program_finished_msg	; Give the program a chance to display
-	call os_print_string		; any output before clearing the screen
-	call os_wait_for_key
 
 	call os_clear_screen		; When finished, clear screen
 	jmp app_selector		; and go back to the program list
@@ -301,8 +299,6 @@ not_bin_extension:
 	call os_run_basic		; And run our BASIC interpreter on the code!
 
 	mov si, program_finished_msg
-	call os_print_string
-	call os_wait_for_key
 
 	call os_clear_screen
 	jmp app_selector		; and go back to the program list
