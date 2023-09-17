@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: cimg/base:2023.09
+    steps:
+      - checkout
+      - run:
+          name: Install dpkg and fakeroot
+          command: |
+            sudo apt-get update -y
+            sudo dpkg --add-architecture i386 && sudo apt-get update -y
+            sudo apt-get install -y dpkg fakeroot wine32 wine64 rpm nasm make genisoimage coreutils
+      - run:
+          name: Generate builds
+          command: |
+            sudo ./buildunix.sh
+
+      - store_artifacts:
+          path: ~/repo/disk_images
