@@ -47,7 +47,7 @@ echo ">>> Copying QroOS kernel and programs..."
 
 rm -rf tmp-loop
 
-mkdir tmp-loop && sudo mount -o loop -t vfat disk_images/QroOS.flp tmp-loop && cp source/kernel.bin tmp-loop/
+mkdir tmp-loop && mount -o loop -t vfat disk_images/QroOS.flp tmp-loop && cp source/kernel.bin tmp-loop/
 
 cp programs/*.bin precompiled/*.bin programs/*.bas tmp-loop
 
@@ -55,7 +55,7 @@ sleep 0.2
 
 echo ">>> Unmounting loopback floppy..."
 
-sudo umount tmp-loop || exit
+umount tmp-loop || exit
 
 rm -rf tmp-loop
 
