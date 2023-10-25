@@ -15,15 +15,13 @@ jobs:
         sudo dpkg --add-architecture i386 && sudo apt-get update -y
         sudo apt-get install -y dpkg fakeroot wine32 wine64 rpm nasm make genisoimage coreutils dosfstools
         chmod +x ./buildunix.sh
-      working-directory: ~/repo
 
     - name: Generate builds
       run: |
         sudo ./buildunix.sh
-      working-directory: ~/repo
 
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
         name: disk_images
-        path: ~/repo/disk_images
+        path: disk_images/
